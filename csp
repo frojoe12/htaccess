@@ -1,0 +1,19 @@
+# X-Frame-Options
+<IfModule mod_headers.c>
+	Header set X-Frame-Options "SAMEORIGIN"
+</IfModule>
+
+# X-Content-Type-Options
+<IfModule mod_headers.c>
+	Header set X-Content-Type-Options "nosniff"
+</IfModule>
+
+# Strict-Transport-Security
+<IfModule mod_headers.c>
+	Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains"
+</IfModule>
+
+# Content-Security-Policy - Example 2
+<IfModule mod_headers.c>
+	Header set Content-Security-Policy "default-src 'none'; img-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self'"
+</IfModule>
